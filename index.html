@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartVet - Casa Animalia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">SmartVet</div>
+        <nav>
+            <a href="#" id="loginBtn">LOGIN</a>
+            <a href="#">ABOUT</a>
+            <a href="#">DOCTORS</a>
+            <a href="#">CONTACT</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>CASA ANIMALIA</h1>
+            <p>Quickly book appointments and access essential pet health information all in one place</p>
+            <a href="#" class="btn">GET STARTED</a>
+        </div>
+        <img src="cat.png" alt="Cute Cat">
+    </section>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeLoginModal">&times;</span>
+            <h2>Login</h2>
+            <form>
+                <label for="email">EMAIL</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+                
+                <label for="password">PASSWORD</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+
+                <button type="button" class="btn-login" onclick="loginUser()">LOGIN</button>
+
+                <p class="forgot-password">Did you forget your password? <a href="#" id="forgotPasswordBtn">Click here</a></p>
+                <p>Don't have an account?</p>
+                <button type="button" id="openRegister" class="btn-register">REGISTER</button>
+            </form>
+        </div>
+    </div>
+
+<div id="adminVerificationModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeAdminVerificationModal">&times;</span>
+        <h2>ADMIN VERIFICATION</h2>
+        <p>Welcome back boss, please enter the OTP we sent in your email!</p>
+        <label for="adminOtpInput">VERIFY OTP</label>
+        <input type="text" id="adminOtpInput" placeholder="Enter OTP">
+        <button id="verifyAdminBtn" class="btn-login">LOGIN</button>
+    </div>
+</div>
+
+
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('registerModal')">&times;</span>
+            <h2>Register</h2>
+    
+            <label>USERNAME</label>
+            <input type="text" placeholder="Enter username">
+    
+            <label>PASSWORD</label>
+            <input type="password" placeholder="Enter password">
+            
+            <div class="password-requirements">
+                <ul>
+                    <li> At least 8 characters</li>
+                    <li> One uppercase letter</li>
+                    <li> One special character</li>
+                    <li> One lowercase letter</li>
+                </ul>
+            </div>
+    
+            <label>EMAIL</label>
+            <input type="email" placeholder="Enter email">
+            
+            <button class="btn-otp">SEND OTP</button>
+    
+            <label>ENTER OTP</label>
+            <input type="text" placeholder="Enter OTP">
+    
+            <button class="btn-register">REGISTER</button>
+        </div>
+    </div>
+
+    <div id="forgotPasswordModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('forgotPasswordModal')">&times;</span>
+            <h2>Forgot Password</h2>
+            <p>Please enter your registered email address. We'll send you an OTP to reset your password.</p>
+            
+            <label>REGISTERED EMAIL</label>
+            <input type="email" placeholder="Enter your email">
+            <button class="btn-otp">SEND OTP</button>
+            
+            <label>VERIFY OTP</label>
+            <input type="text" placeholder="Enter OTP">
+            <button class="btn-next">NEXT</button>
+        </div>
+    </div>
+
+<div id="newPasswordModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('newPasswordModal')">&times;</span>
+        <h2>Set New Password</h2>
+        <p>Please enter your new password.</p>
+
+        <label>NEW PASSWORD</label>
+        <input type="password" id="newPassword" placeholder="Enter new password">
+        
+        <label>CONFIRM PASSWORD</label>
+        <input type="password" id="confirmPassword" placeholder="Confirm new password">
+        
+        <button class="btn-login" onclick="resetPassword()">RESET PASSWORD</button>
+    </div>
+</div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
